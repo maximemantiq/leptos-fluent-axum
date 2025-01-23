@@ -27,11 +27,11 @@ pub static COMPOUND: &[&LazyLock<StaticLoader>] =
 pub fn App() -> impl IntoView {
     view! {
         <I18nProvider>
-            <Title text=move || tr!("welcome-to-leptos") />
+            <Title text=move || tr!("welcome_to_leptos") />
 
             <Router>
                 <main>
-                    <Routes fallback=|| tr!("not-found").into_view()>
+                    <Routes fallback=|| tr!("not_found").into_view()>
                         <Route path=StaticSegment("/") view=PageHome />
                     </Routes>
                 </main>

@@ -1,3 +1,3 @@
-welcome-to-leptos = Welcome to Leptos!
-not-found = Not found
-select-a-language = Select a language:
+welcome_to_leptos = Welcome to Leptos!
+not_found = Not found
+select_a_language = Select a language:

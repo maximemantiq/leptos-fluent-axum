@@ -8,7 +8,7 @@ pub fn PageHome() -> impl IntoView {
     let i18n = expect_i18n();
 
     view! {
-        <h1>{move_tr!("select-a-language")}</h1>
+        <h1>{move_tr!("select_a_language")}</h1>
         <fieldset>
 
             {move || {

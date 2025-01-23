@@ -19,5 +19,5 @@ pub fn NotFound() -> impl IntoView {
         resp.set_status(axum::http::StatusCode::NOT_FOUND);
     }
 
-    view! { <h1>{move_tr!("not-found")}</h1> }
+    view! { <h1>{move_tr!("not_found")}</h1> }
 }
