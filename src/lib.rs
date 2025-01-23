@@ -1,6 +1,7 @@
 pub mod app;
 pub mod shell;
 pub mod i18n;
+pub mod routing;
 
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]

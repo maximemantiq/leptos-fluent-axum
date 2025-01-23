@@ -1,6 +1,6 @@
 use fluent_templates::{static_loader, StaticLoader};
 use leptos::prelude::*;
-use leptos_fluent::{expect_i18n, leptos_fluent, move_tr, tr};
+use leptos_fluent::leptos_fluent;
 use std::sync::LazyLock;
 
 
@@ -16,7 +16,7 @@ pub static COMPOUND: &[&LazyLock<StaticLoader>] =
     &[&TRANSLATIONS, &TRANSLATIONS];
 
 #[component]
-pub fn I18n(children: Children) -> impl IntoView {
+pub fn I18nProvider(children: Children) -> impl IntoView {
     leptos_fluent! {
         children: children(),
         translations: [TRANSLATIONS, TRANSLATIONS] + COMPOUND,
