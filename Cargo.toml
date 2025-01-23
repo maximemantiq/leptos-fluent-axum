@@ -1,0 +1,57 @@
+[package]
+name = "leptos-fluent-ssr-hydrate-axum-example"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+axum = { version = "0.7", optional = true }
+console_error_panic_hook = "0.1"
+tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
+leptos = "0.7"
+leptos_meta = "0.7"
+leptos_axum = { version = "0.7", optional = true }
+leptos_router = "0.7"
+leptos-fluent = { version = "0.2.2", features = [
+  "yaml",
+], default-features = false }
+fluent-templates = { version = "0.13", default-features = false, features = [
+  "macros",
+  "walkdir",
+] }
+wasm-bindgen = "=0.2.99"
+
+[features]
+csr = ["leptos/csr"]
+hydrate = [
+  "leptos/hydrate",
+  "leptos-fluent/hydrate",
+]
+ssr = [
+  "dep:axum",
+  "dep:tokio",
+  "dep:leptos_axum",
+  "leptos/ssr",
+  "leptos_meta/ssr",
+  "leptos_router/ssr",
+  "leptos-fluent/ssr",
+  "leptos-fluent/axum",
+]
+
+[package.metadata.leptos]
+watch-additional-files = ["./locales"]
+output-name = "ssr-axum"
+site-root = "target/site-axum"
+site-pkg-dir = "pkg"
+site-addr = "127.0.0.1:3000"
+reload-port = 3001
+bin-features = ["ssr"]
+lib-features = ["hydrate"]
+
+
+
+[package.metadata.cargo-all-features]
+skip_feature_sets = [[], ["csr", "ssr"], ["csr", "hydrate"], ["ssr", "hydrate"]]
