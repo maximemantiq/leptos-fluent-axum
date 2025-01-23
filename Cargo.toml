@@ -46,8 +46,8 @@ watch-additional-files = ["./locales"]
 output-name = "ssr-axum"
 site-root = "target/site-axum"
 site-pkg-dir = "pkg"
-site-addr = "127.0.0.1:3000"
-reload-port = 3001
+site-addr = "127.0.0.1:4000"
+reload-port = 4001
 bin-features = ["ssr"]
 lib-features = ["hydrate"]
 
