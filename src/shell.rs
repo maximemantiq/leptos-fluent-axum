@@ -1,7 +1,5 @@
-
 use leptos::prelude::*;
-
-use leptos_meta::{MetaTags};
+use leptos_meta::MetaTags;
 
 use crate::app::App;
 
@@ -17,6 +15,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <HydrationScripts options />
                 <MetaTags />
             </head>
+            
             <body>
                 <App />
             </body>
